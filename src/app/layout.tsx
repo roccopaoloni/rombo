@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Syne, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
+import SmoothScroll from '@/components/SmoothScroll';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const syne = Syne({ subsets: ['latin'], variable: '--font-syne' });
@@ -19,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} ${syne.variable} ${jetbrains.variable}`}>
       <body className="bg-surface text-on-surface font-body min-h-screen overflow-x-hidden">
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
